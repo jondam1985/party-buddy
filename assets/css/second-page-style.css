@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* container to hold all the content of this page */
+#menuContainer {
+    width: 90%;
+    height: 90%;
+    padding: 1em;
+}
+
+#foodTitle {
+    display: inline-block;
+    padding: 0 auto;
+    width: 45%;
+}
+
+
+#drinksTitle {
+    display: inline-block;
+    padding: 0 auto;
+    width: 45%;
+}
+
+#foodList {
+    display: inline-block;
+    width: 40%;
+    padding: 0 auto;
+    border: none;
+}
+
+
+.otherBtn{
+justify-content: space-between;
+}
+
+#shopListBtn {
+    background-color: rgb(226, 153, 43);
+    width: 20%;
+    padding-left: 0 auto;
+    border: none;
+    justify-content: space-between;
+}
+
+#mapBtn {
+    background-color: rgb(226, 153, 43);
+    width: 20%;
+    padding: 0 auto;
+    border: none;
+    justify-content: space-between;
+}
+
+#inviteBtn {
+    background-color: rgb(226, 153, 43);
+    width: 20%;
+    padding: 0 auto;
+    border: none;
+    justify-content: space-between;
+}
