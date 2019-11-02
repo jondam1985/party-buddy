@@ -4,61 +4,64 @@
     <meta charset="utf-8">
     <title>Party Buddy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< Updated upstream
 
-    <!-- Bootstrap, jQuery -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <!-- Main CSS and JS -->
-=======
-    
-    //
+    <!-- Bootstrap CSS and JS with jQuery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    
->>>>>>> Stashed changes
+
+    <!-- Main CSS and JS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/core.js"></script>
 </head>
 <body>
     <div id="main">
         <div id="search">
+            <!-- Search Field -->
             <input type="text" placeholder="Type one or more keywords..." class="form-control">
             <button class="btn btn-primary">Search</button>
+        </div>
+        <div id="dietary">
+            <!-- Dietary Restriction Options -->
+            <input type="checkbox" name="dietary" value="vegetarian"> Vegetarian<br>
+            <input type="checkbox" name="dietary" value="vegan"> Vegan<br>
+            <input type="checkbox" name="dietary" value="low-carb"> Low-carb<br>
+            <input type="checkbox" name="dietary" value="low-fat"> Low-fat<br>
+            <input type="checkbox" name="dietary" value="sugar-conscious"> Sugar-conscious<br>
+            <input type="checkbox" name="dietary" value="alcohol-free"> Alcohol-free<br>
+            <input type="checkbox" name="dietary" value="tree-nut-free"> Tree nut-free<br>
+            <input type="checkbox" name="dietary" value="peanut-free"> Peanut-free
         </div>
         <div id="results"></div>
     </div>
 
-<!-- Button trigger modal -->
-<button type="button" id="launchBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+
+    <!-- Button Trigger Modal -->
+    <button type="button" id="launchBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
     </div>
-  </div>
-
-  <!--End bootstrap modal-->
-
+    <!--End Bootstrap Modal-->
 
 </body>
 </html>
