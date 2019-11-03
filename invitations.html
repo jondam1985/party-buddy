@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Party Buddy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS and JS with jQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Main CSS and JS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/core.js"></script>
+</head>
+
+<body>
+    <form id="invitations">
+        <div class="form-group">
+            <label for="emails">Invitation Emails</label>
+            <textarea type="text" id="emails" placeholder="Enter email addresses"></textarea>
+            <small id="emailHelp" class="form-text text-muted">Enter all the emails separated by semicolons (eg.
+                email1@domain.com;email2@domain.com;email3@domain.com).</small>
+        </div>
+        <div class="form-group">
+                <label for="host">Your name (host)</label>
+                <input type="text" id="host" placeholder="eg. Jane Doe">
+            </div>
+        <div class="form-group">
+            <label for="eventAddress">Event address</label>
+            <input type="text" id="eventAddress" placeholder="eg. 123 Street West, Toronto, ON">
+        </div>
+        <div class="form-group">
+            <label for="eventDate">Event date and time</label>
+            <input type="text" id="eventDate" placeholder="eg. Dec 24, 2019 8:00PM">
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea type="text" id="message" placeholder="Message..." maxlength="500"></textarea>
+        </div>
+        <div class="form-group">
+            <button id="submit" type="submit" class="btn btn-primary">Send Invitations</button>
+        </div>
+    </form>
+    <script src="./assets/js/invitations.js"></script>
+</body>
