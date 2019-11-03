@@ -78,6 +78,7 @@ var renderResults = function () {
 
     let foodResponse = JSON.parse(localStorage.getItem("foodResponse")); //Object from search response
     let results = $("#results");
+    results.empty(); //Clears previous results
 
     for (let i = 0; i < 6; i++) {
 
