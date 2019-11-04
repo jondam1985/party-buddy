@@ -1,6 +1,6 @@
 'use strict'
 
-$(".btn-primary").click(function () {
+$("#search button").click(function () {
 
 //This function generates the terms array to feed the urlBuilder function
 var getTerms = function() {
@@ -64,10 +64,21 @@ $.ajax({
     $("#results").empty();
     for (let i = 0; i < 6; i++) {
         let recipe = response.hits[i].recipe;
-        $("#results").append($("<div>", { class: "recipe" }).html(`
+        $("#results").append($("<div>", {
+            class: "recipe",
+            "data-toggle": "modal",
+            "data-target": "#modal"
+        }).html(`
             <img src="${recipe.image}" alt=""><br>
             <b>${recipe.label}</b>
-        `));
+        `).on("click", function() {
+            $("#modal .modal-title ").html(`${recipe.label}`);
+            $("#modal .modal-body").html(`
+                <p><img src="${recipe.image}" alt=""></p>
+                <p><b>Calories:</b> ${recipe.calories.toFixed(2)} cal</p>
+                <p><b>Dietary Traits:</b> ${recipe.healthLabels.join(", ")}</p>
+            `);
+        }));
     }
 });
 
