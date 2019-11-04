@@ -22,7 +22,7 @@ var getRestrictions = function() {
 //This functions builds the url query to search recipes in Edamam API
 //This functions takes an array of search terms and an array of diet restrictions
 var urlBuilder = function (terms, restrictions) {
-    
+
     console.log(terms);
     console.log(restrictions);
 
@@ -48,20 +48,27 @@ var urlBuilder = function (terms, restrictions) {
     return queryUrl;
 }
 
+
+// Clear results and display loading text
+$("#results").empty().text("Loading...");
+
 //This functions makes an ajax call to the Edamam API
 $.ajax({
-    url: urlBuilder(getTerms(), getRestrictions()
-    ), //Invokes urlBuilder function
+    url: urlBuilder(getTerms(), getRestrictions()), //Invokes urlBuilder function
     method: "GET",
-    error: function () {
+    error: function() {
         let errorMsg = "City not found"; //Shows error message if city field is empty or city is not found
     }
 }).then(function(response) {
     console.log(response);
+    $("#results").empty();
+    for (let i = 0; i < 6; i++) {
+        let recipe = response.hits[i].recipe;
+        $("#results").append($("<div>", { class: "recipe" }).html(`
+            <img src="${recipe.image}" alt=""><br>
+            <b>${recipe.label}</b>
+        `));
+    }
+});
 
-    let results = $("#results");
-    let resultsStr = response.hits[0].recipe.label;
-
-    results.append($("<p>").text(resultsStr));
-}) 
 })
