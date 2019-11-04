@@ -99,6 +99,16 @@ var renderResults = function () {
                 <p><img src="${recipe.image}" alt=""></p>
                 <p><b>Calories:</b> ${recipe.calories.toFixed()} cal</p>
                 <p><b>Dietary Traits:</b> ${recipe.healthLabels.join(", ")}</p>
+                <p style="margin-bottom: 0;"><b>Ingredients:</b></p>
+                <ul>
+                    ${(function() {
+                        let ingredients = "";
+                        for (let i = 0; i < recipe.ingredientLines.length; i++) {
+                            ingredients += `<li>${recipe.ingredientLines[i]}</li>`
+                        }
+                        return ingredients;
+                    })()}
+                </ul>
             `);
         }));
     }
