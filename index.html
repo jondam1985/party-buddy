@@ -17,8 +17,9 @@
 </head>
 <body>
     <div id="main">
+
+        <!-- Search Field -->
         <div id="search">
-            <!-- Search Field -->
             <input type="text" placeholder="Type one or more keywords..." class="form-control">
             <button class="btn btn-primary" id="mainSearchBTN">Search</button>
             <div id="drinkSearchBy">
@@ -28,8 +29,9 @@
                     </div>
             </div>
         </div>
+
+        <!-- Dietary Restriction Options -->
         <div id="dietary">
-            <!-- Dietary Restriction Options -->
             <input type="checkbox" name="dietary" value="vegetarian"> Vegetarian<br>
             <input type="checkbox" name="dietary" value="vegan"> Vegan<br>
             <input type="checkbox" name="dietary" value="low-carb"> Low-carb<br>
@@ -40,39 +42,40 @@
             <input type="checkbox" name="dietary" value="peanut-free"> Peanut-free
         </div>
 
+        <!-- Results Grid -->
         <div id="results"></div>
+
     </div>
-        <!-- Button Trigger Modal -->
-        <button type="button" id="launchBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Launch demo modal
-            </button>
-            
-            <a class="btn btn-primary" href="second-page-new.html" role="button">Second Page</a>
-            
-        
-            <!-- Bootstrap Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
+
+    <!-- Navigation -->
+    <div id="navigation">
+        <a class="btn btn-primary" href="second-page-new.html" role="button">Second Page</a>
+    </div>
+
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary add-to-list">Add To List</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
-            <!--End Bootstrap Modal-->
-        
-     <script src="./assets/js/foodapi.js"></script>   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="javascript/drinkapi.js"></script>
+        </div>
+    </div>
+    <!--End Bootstrap Modal-->
+
+
+    <script src="./assets/js/foodapi.js"></script>
+    <script src="./assets/js/drinkapi.js"></script>
+
 </body>
 </html>
