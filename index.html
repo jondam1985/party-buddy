@@ -5,9 +5,11 @@
     <title>Party Buddy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap, jQuery -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap CSS and JS with jQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <!-- Main CSS and JS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -16,8 +18,20 @@
 <body>
     <div id="main">
         <div id="search">
+            <!-- Search Field -->
             <input type="text" placeholder="Type one or more keywords..." class="form-control">
             <button class="btn btn-primary">Search</button>
+        </div>
+        <div id="dietary">
+            <!-- Dietary Restriction Options -->
+            <input type="checkbox" name="dietary" value="vegetarian"> Vegetarian<br>
+            <input type="checkbox" name="dietary" value="vegan"> Vegan<br>
+            <input type="checkbox" name="dietary" value="low-carb"> Low-carb<br>
+            <input type="checkbox" name="dietary" value="low-fat"> Low-fat<br>
+            <input type="checkbox" name="dietary" value="sugar-conscious"> Sugar-conscious<br>
+            <input type="checkbox" name="dietary" value="alcohol-free"> Alcohol-free<br>
+            <input type="checkbox" name="dietary" value="tree-nut-free"> Tree nut-free<br>
+            <input type="checkbox" name="dietary" value="peanut-free"> Peanut-free
         </div>
         <div id="results"></div>
     </div>
