@@ -4,3 +4,34 @@ body {
     margin: 0;
     padding: 0;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 20px 0;
+    padding: 0 0 0 10px;
+}
+
+#results .recipe {
+    flex: 0 0 calc(50% - 10px);
+    box-sizing: border-box;
+    margin: 0 10px 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+#results .recipe:hover {
+    border: 1px solid #308aff;
+}
+
+@media only screen and (min-width: 600px) {
+    #results .recipe {
+        flex: 0 0 calc(33.3333% - 10px);
+    }
+}
