@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-$(".btn-primary").click(function () {
+$("#search button").click(function() {
 
     //This function generates the terms array to feed the urlBuilder function
     var getTerms = function () {
@@ -48,6 +48,8 @@ $(".btn-primary").click(function () {
         return queryUrl;
     }
 
+    renderLoading();
+
     //This functions makes an ajax call to the Edamam API
     $.ajax({
         url: urlBuilder(getTerms(), getRestrictions()
@@ -58,46 +60,47 @@ $(".btn-primary").click(function () {
         }
     }).then(function (response) {
         console.log(response);
-
         localStorage.setItem("foodResponse", JSON.stringify(response));
-
-        //let results = $("#results");
-        //let resultsStr = response.hits[0].recipe.label;
-
-        //results.append($("<p>").text(resultsStr));
-
-        //renderResults();
-
         renderResults();
     })
 })
 
-//This function renders the results in the page
+var renderLoading = function () {
+    // Clear results and display loading text
+    $("#results").empty().text("Loading...");
+};
 
+//This function renders the results in the page
 var renderResults = function () {
 
     let foodResponse = JSON.parse(localStorage.getItem("foodResponse")); //Object from search response
     let results = $("#results");
-    results.empty(); //Clears previous results
+    results.empty(); // Clears previous results
 
     for (let i = 0; i < 6; i++) {
+        let recipe = foodResponse.hits[i].recipe;
 
-        let responseImage = foodResponse.hits[i].recipe.image;
-        let responseTitle = foodResponse.hits[i].recipe.label;
-        let responseServings = foodResponse.hits[i].recipe.yield;
-        let responseIngredients = foodResponse.hits[i].recipe.ingredientLines;
-        let numIngredients = responseIngredients.length;
-        let responseCalories = parseInt(foodResponse.hits[i].recipe.calories);
-        let resultInfo = "Servings: " + responseServings + "/" + "Ingredients: " + numIngredients + "/" + "Calories: " + responseCalories;
-
-        let singleResult = $("<div>");
-        let resultImg = $("<img>").attr("src", responseImage);
-        let resultTitle = $("<h5>").text(responseTitle);
-        let resultText = $("<p>").text(resultInfo);
-
-        singleResult.attr("data-index", i);
-        results.append(singleResult.append([resultImg, resultTitle, resultText]));
-
+        $(results).append($("<div>", {
+            class: "recipe",
+            "data-index": i,
+            "data-toggle": "modal",
+            "data-target": "#modal"
+        }).html(`
+            <p><img src="${recipe.image}" alt=""></p>
+            <h5>${recipe.label}</h5>
+            <p>
+                Servings: ${recipe.yield}<br>
+                Ingredients: ${recipe.ingredientLines.length}<br>
+                Calories: ${recipe.calories.toFixed()}
+            </p>
+        `).on("click", function() {
+            $("#modal .modal-title ").html(`${recipe.label}`);
+            $("#modal .modal-body").html(`
+                <p><img src="${recipe.image}" alt=""></p>
+                <p><b>Calories:</b> ${recipe.calories.toFixed()} cal</p>
+                <p><b>Dietary Traits:</b> ${recipe.healthLabels.join(", ")}</p>
+            `);
+        }));
     }
 
-}
+};
