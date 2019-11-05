@@ -1,6 +1,6 @@
 'use strict';
 
-$("#search button").click(function() {
+$("#mainSearchBTN").click(function() {
 
     //This function generates the terms array to feed the urlBuilder function
     var getTerms = function () {
