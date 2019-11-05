@@ -118,6 +118,7 @@ var renderResults = function () {
                         return ingredients;
                     })()}
                 </ul>
+                <a href="${recipe.url}" target="_blank">See recipe</a>
             `);
         }));
     }
