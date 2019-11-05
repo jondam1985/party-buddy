@@ -74,7 +74,7 @@ var renderBNDrinkRes = function () {
                         ${(function () {
                     let ingredients = "";
                     for (let i = 0; i < ingredientTypes.length; i++) {
-                        ingredients += `<li>${measurements[i] + ingredientTypes[i]}</li>`
+                        ingredients += `<li>${recipe[i]}</li>`
                     }
                     return ingredients;
                 })()}
