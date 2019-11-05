@@ -50,19 +50,28 @@ $("#search button").click(function() {
 
     renderLoading();
 
-    //This functions makes an ajax call to the Edamam API
-    $.ajax({
-        url: urlBuilder(getTerms(), getRestrictions()
-        ), //Invokes urlBuilder function
-        method: "GET",
-        error: function () {
-            let errorMsg = "Nothing found"; //Shows error message if city field is empty or city is not found
-        }
-    }).then(function (response) {
-        console.log(response);
-        localStorage.setItem("foodResponse", JSON.stringify(response));
-        renderResults();
-    })
+    if (test) {
+        // Test mode, simulate load time
+        window.setTimeout(function() {
+            console.log(foodTestData);
+            localStorage.setItem("foodResponse", JSON.stringify(foodTestData));
+            renderResults();
+        }, 500);
+    } else {
+        //This functions makes an ajax call to the Edamam API
+        $.ajax({
+            url: urlBuilder(getTerms(), getRestrictions()
+            ), //Invokes urlBuilder function
+            method: "GET",
+            error: function () {
+                let errorMsg = "Nothing found"; //Shows error message if city field is empty or city is not found
+            }
+        }).then(function (response) {
+            console.log(response);
+            localStorage.setItem("foodResponse", JSON.stringify(response));
+            renderResults();
+        })
+    }
 })
 
 var renderLoading = function () {
