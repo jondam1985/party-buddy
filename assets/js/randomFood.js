@@ -1,6 +1,6 @@
 
 
-$("#search button").click(function () {
+$("#randomSearchBTN").click(function () {
 
     //This function generates a random integer between 0 and 533
     var randomNum = function () {
