@@ -56,7 +56,7 @@ $("#search button").click(function() {
         ), //Invokes urlBuilder function
         method: "GET",
         error: function () {
-            let errorMsg = "Nothing found"; //Shows error message if city field is empty or city is not found
+            let errorMsg = "Nothing found"; //Shows error message if field is empty or city is not found
         }
     }).then(function (response) {
         console.log(response);
