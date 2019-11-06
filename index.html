@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS and JS with jQuery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Lobster|Satisfy&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -16,19 +17,30 @@
     <script src="assets/js/core.js"></script>
 </head>
 <body>
+
+        
+                <div id="topContainer">
+                  <h1 id="title" class="display-4">Party Buddy</h1>
+                  <p class="lead">A buddy to help you plan a party!</p>
+                </div>
+            
+              
     <div id="main">
 
         <!-- Search Field -->
         <div id="search">
+
+            <div id="foodSearchBy">
             <input type="text" placeholder="Type one or more keywords..." class="form-control">
-            <button class="btn btn-primary" id="mainSearchBTN">Search</button>
+            <button class="btn btn-primary" id="mainSearchBTN">Search Recipes</button>
             <button class="btn btn-primary" id="randomSearchBTN">Random</button>
-            <div id="drinkSearchBy">
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" id="byName" class="btn btn-secondary btn-sm">By Drink</button>
-                        <button type="button" id="byRandom" class="btn btn-secondary btn-sm">Random</button>
-                    </div>
             </div>
+            
+            <div id="drinkSearchBy">
+                <button class="btn btn-primary" id="byName">Search Drinks</button>
+                <button class="btn btn-primary" id="byRandom">Random</button>
+            </div>
+            
         </div>
 
         <!-- Dietary Restriction Options -->
@@ -44,11 +56,11 @@
         <!-- Results Grid -->
         <div id="results"></div>
 
-    </div>
+        <!-- Navigation -->
+        <div id="navigation">
+            <a class="btn btn-primary" id="nextPageBtn" href="second-page-new.html" role="button">Second Page</a>
+        </div>
 
-    <!-- Navigation -->
-    <div id="navigation">
-        <a class="btn btn-primary" href="second-page-new.html" role="button">Second Page</a>
     </div>
 
 
