@@ -3,6 +3,10 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Lobster', cursive;
+    background: url("../css/background2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 img {
@@ -35,3 +39,83 @@ img {
         flex: 0 0 calc(33.3333% - 10px);
     }
 }
+
+/* wendy wip */
+
+
+#topContainer {
+    text-align: center;
+}
+
+#title {
+    font-size: 5em;
+    font-family: 'Lobster', cursive;
+    color: whitesmoke;
+}
+
+#main {
+    margin-left: 30%;
+    margin-right: -30%;
+    margin-top: 1em;
+    width: 80%;
+    
+    /* float: center;
+    position: absolute; */
+}
+
+.form-control {
+    width: 50%;
+}
+
+#search {
+    margin-top: 1em;
+}
+
+.btn.btn-primary {
+    font-size: 18px;
+}
+
+#mainSearchBTN {
+    width: 25%;
+    margin-top: 0.5em;
+    background-color: #2E86AB;
+    border-color: #2E86AB;
+}
+
+#randomSearchBTN {
+    width: 25%;
+    margin-top: 0.5em;
+    background-color: #2E86AB;
+    border-color: #2E86AB;
+}
+
+#drinkSearchBy {
+    margin-top: 1em;
+}
+
+#byName{
+    width: 25%;
+    margin-top: 0.5em;
+    background-color: #A23B72;
+    border-color: #A23B72;
+}
+
+#byRandom {
+    width: 25%;
+    margin-top: 0.5em;
+    background-color: #A23B72;
+    border-color: #A23B72;
+  
+}
+
+#nextPageBtn {
+    background-color: #F18F01;
+    border-color: #F18F01;
+}
+
+#dietary {
+    margin-top: 1em;
+    font-size: 18px;
+}
+
+
