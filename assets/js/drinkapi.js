@@ -47,40 +47,66 @@ var renderBNDrinkRes = function(){
     results.empty(); // clears all pervious results
     
     for (var i=0; i<6; i++){
-        let dResponseImage = drinkResponse.drinks[i].strDrinkThumb;
-        let dResponseTitle= drinkResponse.drinks[i].strDrink;
+        let drink=drinkResponse.drinks[i]
+        let drinkImage = drink.strDrinkThumb;
+        let drinkTitle= drink.strDrink;
+        let drinkInstruc=drink.strInstructions;
         // creating a new array that holds only ingredient keys without null values
-        var ingredientTypes = [];
-        for (var key in drinkResponse.drinks[i]) {
-            if (drinkResponse.drinks[i].hasOwnProperty(key) && key.match(/strIngredient/gi) && drinkResponse.drinks[i][key] != null) {
-            ingredientTypes.push(drinkResponse.drinks[i][key]);
+        var bevIngredients = [];
+        for (var key in drink) {
+            if (drink.hasOwnProperty(key) && key.match(/strIngredient/gi) && drink[key] != null) {
+            bevIngredients.push(drinkResponse.drinks[i][key]);
             }
         };
         // creaitng a new array that holds on the measurement keys without null values
         var measurements =[];
-        for (var key in drinkResponse.drinks[i]) {
-            if (drinkResponse.drinks[i].hasOwnProperty(key) && key.match(/strMeasure/gi) && drinkResponse.drinks[i][key] != null) {
-            measurements.push(drinkResponse.drinks[i][key]);
+        for (var key in drink) {
+            if (drink.hasOwnProperty(key) && key.match(/strMeasure/gi) && drink[key] != null) {
+            measurements.push(drink[key]);
             }
         };
         // cancatinatiing the ingredients and measurments to create a recipe array
         var recipe = measurements.map(function (str, idx) {
-            return str+ " "+ ingredientTypes[idx];});
+            return str+ " "+ bevIngredients[idx];});
             console.log(recipe);
 
-        let DrinkResponseImage = drinkResponse.drinks[i].strDrinkThumb;
-        let DrinkResponseTitle= drinkResponse.drinks[i].strDrink;
-        let numIngredients= ingredientTypes.length;
-        let resultinfo = "Servings: 1 " + "Ingredients: "+numIngredients;
-            
+        $(results).append($("<div>", {
+            class: "byNameDrink",
+            "data-index": i,
+            "data-toggle":"modal",
+            "data-target": "#modal"
+        }).html(`<p><img src="${drinkImage}"alt=""></p>
+        <h5>${drinkTitle}</h5>
+        <p>
+            Servings: 1 <br>
+            Ingredients: ${bevIngredients.length}<br>
+        </p>
+`   ).on("click",function(){
+        $("#modal .modal-title ").html(`${drinkTitle}`);
+        $("#modal .modal-body").html(`
+            <p><img src="${drinkImage}" alt=""></p>
+            <p style="margin-bottom: 0;"><b>Ingredients:</b></p>
+            <ul>
+                ${(function() {
+                    let drinkingredients = "";
+                    for (let i = 0; i < recipe.length; i++) {
+                    drinkingredients += `<li>${recipe[i]}</li>`
+                    }
+                    return drinkingredients;
+                     })()}
+            </ul>
+            <p> 
+                <b>Instructions:</b> 
+                <br>
+                 ${drinkInstruc}
+            <p>
+    `);
+     }));
+
         
-        let singleResult=$("<div>");
-        let resultImg = $("<img>").attr("src", DrinkResponseImage);
-        let resultTitle = $("<h5>").text(DrinkResponseTitle);
-        let resultText=$("<p>").text(resultinfo);
-        singleResult.attr("data-index", i);
-        results.append(singleResult.append([resultImg,resultTitle,resultText]));
     };
+
+    // for loop  ends
 
 };
 // function to render the randon drinks response to html 
