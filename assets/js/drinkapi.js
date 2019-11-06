@@ -1,51 +1,67 @@
-// api key 
+// api key
 var drinkAPIKEY= "1";
 // first API call is based on the users input, the key word is then used to generate results from the api.
 
 var byNameCallAPI = function(){
-    var drinkInput = $("input").val();
-    var byNameQueryURL= "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+drinkInput
-    $.ajax({
-        url: byNameQueryURL,
-        methdd: "GET",
-        error: function(){
-            let errorMsg = "nothing found";}
-    
-    })
-    .then(function(response){
-        console.log(response);
-        localStorage.setItem("DrinkResponse",JSON.stringify(response));
 
-        renderBNDrinkRes();
-    });
+    renderLoading();
+
+    if (test) {
+        // Test mode, simulate load time
+        window.setTimeout(function() {
+            console.log(drinksTestData);
+            localStorage.setItem("DrinkResponse", JSON.stringify(drinksTestData));
+            renderBNDrinkRes();
+        }, 500);
+    } else {
+        var drinkInput = $("input").val();
+        var byNameQueryURL= "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+drinkInput
+        $.ajax({
+            url: byNameQueryURL,
+            methdd: "GET",
+            error: function(){
+                let errorMsg = "nothing found";}
+
+        })
+        .then(function(response){
+            console.log(response);
+            localStorage.setItem("DrinkResponse",JSON.stringify(response));
+
+            renderBNDrinkRes();
+        });
+    }
 };
-// second ajax call for the random drink function 
+// second ajax call for the random drink function
 var randomDrinkCounter = 0;
 var RandomQueryURL="https://www.thecocktaildb.com/api/json/v1/1/random.php";
 var randomDrinkCall = function(randomDrinkCounter){
-        
+
+    renderLoading();
+
     var randomCallParams={
         url: RandomQueryURL,
         method: "GET",
         error: function () {
             let errorMsg = "Nothing found"; //Shows error message if city field is empty or city is not found
-        }};
-    var responseFn = function(response){ 
+        }
+    };
+    var responseFn = function(response){
         randomDrinkCounter++;
         localStorage.setItem("randomDrinkResponse"+randomDrinkCounter,JSON.stringify(response));
-        if(randomDrinkCounter<=5){randomDrinkCall(randomDrinkCounter);
+        if(randomDrinkCounter<=5){
+            randomDrinkCall(randomDrinkCounter);
         }
+        renderRDrinkResults();
     };
     $.ajax(randomCallParams).then(responseFn);
 
-      renderRDrinkResults();
-    };
-   
+};
+
 var renderBNDrinkRes = function(){
     let drinkResponse = JSON.parse(localStorage.getItem("DrinkResponse"));
     let results=$("#results");
     results.empty(); // clears all pervious results
-    
+
     for (var i=0; i<6; i++){
         let dResponseImage = drinkResponse.drinks[i].strDrinkThumb;
         let dResponseTitle= drinkResponse.drinks[i].strDrink;
@@ -72,8 +88,8 @@ var renderBNDrinkRes = function(){
         let DrinkResponseTitle= drinkResponse.drinks[i].strDrink;
         let numIngredients= ingredientTypes.length;
         let resultinfo = "Servings: 1 " + "Ingredients: "+numIngredients;
-            
-        
+
+
         let singleResult=$("<div>");
         let resultImg = $("<img>").attr("src", DrinkResponseImage);
         let resultTitle = $("<h5>").text(DrinkResponseTitle);
@@ -83,7 +99,7 @@ var renderBNDrinkRes = function(){
     };
 
 };
-// function to render the randon drinks response to html 
+// function to render the randon drinks response to html
 var renderRDrinkResults = function(){
     let results = $("#results");
     results.empty();// clears all pervious results
@@ -109,7 +125,7 @@ var renderRDrinkResults = function(){
         var recipe1 = randomMeasurements.map(function (str, idx) {
                 return str+ " "+ randomIngredients[idx];});
         let numbIngredients= randomIngredients.length;
-    
+
 
         $(results).append($("<div>", {
             class: "randomDrink",
@@ -137,8 +153,8 @@ var renderRDrinkResults = function(){
                         return drinkingredients;
                          })()}
                 </ul>
-                <p> 
-                    <b>Instructions:</b> 
+                <p>
+                    <b>Instructions:</b>
                     <br>
                      ${DrinkInstruc}
                 <p>
@@ -147,8 +163,7 @@ var renderRDrinkResults = function(){
     };
 };
 
-// when the ByName button is clicked it activates that the search button calls the by Name api 
+// when the ByName button is clicked it activates that the search button calls the by Name api
 $("#byName").click(byNameCallAPI);
-// when the by random button is clicked it starts the by random api call 
+// when the by random button is clicked it starts the by random api call
 $("#byRandom").click(function() {randomDrinkCall(randomDrinkCounter)});
-  
