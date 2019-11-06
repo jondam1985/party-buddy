@@ -17,3 +17,4 @@ $("body").ready(function () {
         <button>&times;</button>`));
     }
 })
+
