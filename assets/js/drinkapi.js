@@ -68,14 +68,14 @@ var renderBNDrinkRes = function(){
         let dResponseImage = drink.strDrinkThumb;
         let dResponseTitle= drink.strDrink;
         // creating a new array that holds only ingredient keys without null values
-        var ingredientTypes = [];
+        let ingredientTypes = [];
         for (var key in drink) {
             if (drink.hasOwnProperty(key) && key.match(/strIngredient/gi) && drink[key] != null) {
             ingredientTypes.push(drink[key]);
             }
         };
         // creaitng a new array that holds on the measurement keys without null values
-        var measurements = [];
+        let measurements = [];
         for (var key in drink) {
             if (drink.hasOwnProperty(key) && key.match(/strMeasure/gi) && drink[key] != null) {
             measurements.push(drink[key]);
