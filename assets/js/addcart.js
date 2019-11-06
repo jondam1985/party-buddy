@@ -19,7 +19,7 @@ $(".add-to-list").click(function () {
         else {
             let drinks = JSON.parse(localStorage.getItem("drinks"));
             let i = Object.keys(drinks).length;
-            food["item" + i] = { "title": title, "ingredients": ingredients };
+            drinks["item" + i] = { "title": title, "ingredients": ingredients };
             localStorage.setItem("drinks", JSON.stringify(drinks));
         }
     }
