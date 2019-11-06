@@ -4,7 +4,7 @@ $("#mainSearchBTN").click(function() {
 
     //This function generates the terms array to feed the urlBuilder function
     var getTerms = function () {
-        let searchValues = $(".form-control").val();
+        let searchValues = $("#search #keywords").val();
         let termsArr = searchValues.split(" "); //Creates terms array
         return termsArr;
     }
