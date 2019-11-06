@@ -10,30 +10,34 @@ $(".add-to-list").click(function () {
     console.log(type);
     console.log(type.includes("thecocktail"));
 
+    var drinks = [];
+
     if (type.includes("thecocktail")) {
 
         if (localStorage.getItem("drinks") == null) {
-            let drinks = { "item0": { "title": title, "ingredients": ingredients } };
+            drinks[0] = [title, ingredients];
             localStorage.setItem("drinks", JSON.stringify(drinks));
         }
         else {
             let drinks = JSON.parse(localStorage.getItem("drinks"));
-            let i = Object.keys(drinks).length;
-            food["item" + i] = { "title": title, "ingredients": ingredients };
+            let i = drinks.length;
+            drinks[i] = [title, ingredients];
             localStorage.setItem("drinks", JSON.stringify(drinks));
         }
     }
 
     else {
 
+        var food = [];
+
         if (localStorage.getItem("food") == null) {
-            let food = { "item0": { "title": title, "ingredients": ingredients } };
+            food[0] = [title, ingredients];
             localStorage.setItem("food", JSON.stringify(food));
         }
         else {
             let food = JSON.parse(localStorage.getItem("food"));
-            let i = Object.keys(food).length;
-            food["item" + i] = { "title": title, "ingredients": ingredients };
+            let i = food.length;
+            food[i] = [title, ingredients];
             localStorage.setItem("food", JSON.stringify(food));
         }
     }
