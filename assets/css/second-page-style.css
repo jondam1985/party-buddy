@@ -86,12 +86,19 @@ body {
     width: 50%;
 } 
 
+/* #foodList div,
+#drinksList div {
+    display: flex;
+} */
+
 
 /* button to remove items from food and drink lists */
 .remover {
     float: none;
     color: #F18F01;
     opacity: 0.9;
+    margin-left: 10px;
+    margin-top: -15px;
 }
 
 /* media queries */
