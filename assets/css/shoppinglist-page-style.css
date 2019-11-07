@@ -1,5 +1,127 @@
-@media print {
+@charset "utf-8";
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Livvic', sans-serif;
+    background: url("../img/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* header */
+#topContainer {
+    text-align: center;
+}
+
+#header {
+    font-size: 5em;
+    font-family: 'Lobster', cursive;
+    color: whitesmoke;
+}
+
+/* print button */
+#print {
+    background-color: rgba(245, 245, 245, 0.70);
+    border: 1.5px solid #2E86AB;
+    border-radius: 8px;
+}
+
+/* home page button */
+#homeBtn{
+    position: absolute;
+    top:0;
+    left:0;
+    margin: 0.5em;
+}
+
+.glyphicon-home {
+    font-size: 2em;
+    color: #2E86AB;
+}
+
+.topCorner{
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+/* dropdown menu */
+#dropdownMenuButton {
+    background-color: #F18F01;
+    border: none;
+    margin: 0.5em;
+}
+.dropdown-item {
+    background-color: whitesmoke;
+    margin-right: 50px;
+}
+
+#dropdownMenuButton:hover {
+    color: whitesmoke;
+}
+
+/* main page content */
+
+#shopListArea {
+    margin-left: 20%;
+    margin-right: -20%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 60%;
+    min-height: 65vh;
+    border: 2px solid #2E86AB;
+    border-radius: 8px;
+    background-color: rgba(245, 245, 245, 0.70);
+    padding: 1em;
+}
+
+#shopListArea:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+/* h2 {
+    font-family: 'Lobster', cursive;
+} */
+
+
+/* media queries */
+@media only screen and (max-width: 1200px) {
+    #shopListArea {
+        margin-left: 10%;
+        margin-right: -10%;
+        margin-top: 1em;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #shopListArea {
+        margin-left: 5%;
+        margin-right: -5%;
+        margin-top: 1em;
+        width: 90%;
+    }
+
+    #header{
+        margin-top: 5vh;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    #header {
+        font-size: 4em;
+        margin-top: 1em;
+    }
+}
+   
+@media print {
     * {
         box-sizing: border-box;
     }
@@ -13,12 +135,18 @@
     }
 
     #shopListArea {
-        margin-left: 2cm;
+        float: center;
+        margin: 2em;
+        width: 90%;
+        min-height: none;
+        border: none;
+        background-color:none;
+        padding: none;
     }
 
     #print,
-    #back {
+    #homeBtn,
+    #dropdownMenuButton {
         display: none;
     }
-
 }
