@@ -53,6 +53,10 @@ p {
     margin-right: 50px;
 }
 
+#dropdownMenuButton:hover {
+    color: whitesmoke;
+}
+
 
 /* menu container to hold food and drink lists */
 #menuContainer {
