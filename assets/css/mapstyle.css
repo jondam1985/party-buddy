@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Lobster', cursive;
-    background: url("../css/background2.jpg");
+    font-family: 'Livvic', sans-serif;
+    background: url("../img/bg.jpg");
     background-size: cover;
     background-attachment: fixed;
 }
@@ -17,32 +17,56 @@ body {
     color: whitesmoke;
 }
 
+/* home page button */
+#homeBtn{
+    position: absolute;
+    top:0;
+    left:0;
+    margin: 0.5em;
+}
+
+.glyphicon-home {
+    font-size: 2em;
+    color: #2E86AB;
+}
+
+/* dropdown menu button */
+
+#dropdownMenuButton {
+    background-color: #F18F01;
+    border: none;
+    margin: 0.5em;
+}
+.dropdown-item {
+    background-color: whitesmoke;
+}
+
+.topCorner{
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+/* main content */
 #main {
     margin-left: 20%;
     margin-right: -20%;
     margin-top: 2em;
     width: 80%;
-
 }
 
 .form-control {
     width: 70%;
 }
 
-
+/* search tabs */
 #mapGroceries {
     font-size: 18px;
-
 }
 
 #mapLiquor {
     font-size: 18px;
 }
-
-#searchPlaces {
-    font-size: 18px;
-}
-
 
 .tabs {
     background-color: #2E86AB;
@@ -53,33 +77,29 @@ body {
     border-bottom: none;
 }
 
-.nav-link {
+.nav-link.tabs {
     border: whitesmoke;
-    border: solid;
-}
-
-#mapGroceries:Hover {
-    opacity: 0.75;
-    color: lightskyblue;
-}
-
-#mapLiquor:Hover {
-    opacity: 0.75;
-    color: lightskyblue;
+    border: 1px solid;
+    padding: 0.8;
 }
 
 #searchAddress {
     display: inline-block;
 }
 
-#searchPlaces {
+#searchBtn {
     display: inline-block;
+    font-size: 17px;
+    background-color: #A23B72; 
+    border: none;
 }
 
+/* radio buttons */
 #searchMap {
     color: whitesmoke;
 }
 
+/* display results of search */
 #mapResult {
     margin-left: 20%;
     margin-right: -20%;
@@ -91,40 +111,8 @@ iframe {
     width: 76%;
 }
 
+/* media queries */
 @media only screen and (max-width: 1200px) {
-    #main {
-        margin-left: 10%;
-        margin-right: -10%;
-        margin-top: 1em;
-        width: 90%;
-    }
-    
-    .form-control {
-        width: 80%;
-    }
-
-    #mapGroceries {
-        font-size: 16px;
-
-    }
-
-    #mapLiquor {
-        font-size: 16px;
-    }
-
-    #mapResult {
-        margin-left: 10%;
-        margin-right: -10%;
-        margin-top: 1em;
-        width: 90%;
-    }
-
-    iframe {
-        width: 90%;
-    }
-}
-
-@media only screen and (max-width: 980px) {
     #main {
         margin-left: 10%;
         margin-right: -10%;
@@ -199,16 +187,17 @@ iframe {
     }
     
     .form-control {
-        width: 80%;
+        width: 100%;
     }
 
     #mapGroceries {
-        font-size: 14px;
-
+        font-size: 2.8vw;
+        padding: 8px;
     }
 
     #mapLiquor {
-        font-size: 14px;
+        font-size: 2.8vw;
+        padding: 8px;
     }
 
     #mapResult {
@@ -220,5 +209,26 @@ iframe {
 
     iframe {
         width: 100%;
+    }
+
+    #searchBtn {
+        font-size: 2.8vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+     
+    #mapGroceries {
+        font-size: 3.5vw;
+        padding: 6px;
+    }
+
+    #mapLiquor {
+        font-size: 3.5vw;
+        padding: 6px;
+    }
+
+    #searchBtn {
+        font-size: 3.5vw;
     }
 }
