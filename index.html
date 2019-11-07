@@ -5,9 +5,10 @@
     <title>Party Buddy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Roboto&display=swap">
     <!-- Bootstrap CSS and JS with jQuery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Bitter|Lobster|Satisfy&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -18,40 +19,40 @@
 </head>
 <body>
 
-        
-                <div id="topContainer">
-                  <h1 id="title" class="display-4">Party Buddy</h1>
-                  <p class="lead">A buddy to help you plan a party!</p>
-                </div>
-            
-              
-    <div id="main">
+    <header class="container">
+        <h1 id="title" class="display-4">Party Buddy</h1>
+        <p id="subtitle" class="lead">A buddy to help you plan a party!</p>
+    </header>
 
-        <!-- Search Field -->
+    <div id="main" class="container">
+
         <div id="search">
 
-            <div id="foodSearchBy">
-            <input type="text" placeholder="Type one or more keywords..." class="form-control">
-            <button class="btn btn-primary" id="mainSearchBTN">Search Recipes</button>
-            <button class="btn btn-primary" id="randomSearchBTN">Random</button>
+            <!-- Search Field -->
+            <input id="keywords" type="text" placeholder="Type one or more keywords..." class="form-control">
+
+            <!-- Search Buttons -->
+            <div id="foodSearchBy" class="search-buttons">
+                <button class="btn btn-primary" id="mainSearchBTN">Search Recipes</button>
+                <button class="btn btn-primary" id="randomSearchBTN">Random</button>
             </div>
-            
-            <div id="drinkSearchBy">
+            <div id="drinkSearchBy" class="search-buttons">
                 <button class="btn btn-primary" id="byName">Search Drinks</button>
                 <button class="btn btn-primary" id="byRandom">Random</button>
             </div>
-            
+
+            <!-- Dietary Filters -->
+            <div id="dietary">
+                <label><input type="checkbox" name="dietary" value="vegetarian"> Vegetarian</label><br>
+                <label><input type="checkbox" name="dietary" value="vegan"> Vegan</label><br>
+                <label><input type="checkbox" name="dietary" value="sugar-conscious"> Sugar-conscious</label><br>
+                <label><input type="checkbox" name="dietary" value="alcohol-free"> Alcohol-free</label><br>
+                <label><input type="checkbox" name="dietary" value="tree-nut-free"> Tree nut-free</label><br>
+                <label><input type="checkbox" name="dietary" value="peanut-free"> Peanut-free</label>
+            </div>
+
         </div>
 
-        <!-- Dietary Restriction Options -->
-        <div id="dietary">
-            <input type="checkbox" name="dietary" value="vegetarian"> Vegetarian<br>
-            <input type="checkbox" name="dietary" value="vegan"> Vegan<br>
-            <input type="checkbox" name="dietary" value="sugar-conscious"> Sugar-conscious<br>
-            <input type="checkbox" name="dietary" value="alcohol-free"> Alcohol-free<br>
-            <input type="checkbox" name="dietary" value="tree-nut-free"> Tree nut-free<br>
-            <input type="checkbox" name="dietary" value="peanut-free"> Peanut-free
-        </div>
 
         <!-- Results Grid -->
         <div id="results"></div>
