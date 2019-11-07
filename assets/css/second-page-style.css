@@ -9,6 +9,10 @@ body {
     background-attachment: fixed;
 }
 
+p {
+    font-size: 18px;
+}
+
 /* header */
 #topContainer {
     text-align: center;
