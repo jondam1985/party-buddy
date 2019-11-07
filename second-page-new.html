@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Party Buddy - Second Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="assets/css/second-page-style.css">
-    <script src="assets/js/second-page-core.js"></script>
-</head>
-<body>
-
-    <h1>Your Menu</h1>
-
-    <div id="menuContainer">
-
-        <h2 id="foodTitle">Food</h2> 
-
-        <h2 id="drinksTitle">Drinks</h2>
-
-        <div id="foodList"></div>
-
-        <div id="drinksList"></div>
-
-        <div class="otherBtn">
-            <a class="btn btn-primary" href="shopping-list-page.html" role="button" id="shopListBtn">Shopping List</a>
-            <a class="btn btn-primary" href="map-page.html" role="button" id="mapBtn">Map</a>
-            <a class="btn btn-primary" href="invitations.html" role="button" id="inviteBtn">Invite People!</a>
+   <head>
+      <meta charset="utf-8">
+      <title>Party Buddy - Your Menu</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Lobster|Livvic&display=swap" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/css/second-page-style.css">
+   </head>
+   <body>
+      <div id="topContainer"> 
+         <h1 id="header" class="display-4">Your Menu</h1>
+         <div id="homeBtn">
+            <a href="index.html">
+                <span class="glyphicon glyphicon-home"></span>
+            </a>
         </div>
-
-    </div>
-<script src="./assets/js/renderSelections.js"></script>
-</body>
+         <div class="dropdown topCorner">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            What's Next?
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+               <a class="dropdown-item" href="shopping-list-page.html">Shopping List</a>
+               <a class="dropdown-item" href="map-page.html">Map</a>
+               <a class="dropdown-item" href="invitations.html">Invite People!</a>
+            </div>
+         </div>
+      </div>
+      <div id="main">
+         <div id="menuContainer">
+            <div id="foodDisplay">
+               <h2 class="category">Food</h2>
+               <div id="foodList"></div>
+            </div>
+            <div id="drinksDisplay"></div>
+            <h2 class="category">Drinks</h2>
+            <div id="drinksList"></div>
+         </div>
+      </div>
+      <script src="./assets/js/renderSelections.js"></script>
+   </body>
 </html>
