@@ -6,7 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Livvic', sans-serif;
     background: url("../img/bg.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -18,11 +18,28 @@ img { max-width: 100%; height: auto; }
 header {
     margin: 2em 0;
     text-align: left;
-    color: white;
+    color: whitesmoke;
     text-shadow: 1px 1px 4px #00000099;
 }
 header #title { font-size: 5em; font-family: 'Lobster', cursive; display: inline-block; margin: 0 15px 0 0; }
 header #subtitle { font-size: 24px; display: inline-block; }
+
+/* dropdown menu button */
+
+.topCorner{
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+#dropdownMenuButton {
+    background-color: #F18F01;
+    border: none;
+    margin: 0.5em;
+}
+.dropdown-item {
+    background-color: whitesmoke;
+}
 
 /* Search */
 #search #keywords { font-size: 24px; }
@@ -30,12 +47,12 @@ header #subtitle { font-size: 24px; display: inline-block; }
 #search .search-buttons button { width: calc(50% - 5px); font-size: 18px; }
 #search .search-buttons button:first-child { margin: 0 5px 0 0; }
 #search .search-buttons button:last-child { margin: 0 0 0 5px; }
-#search #foodSearchBy button { background-color: #0d79d1; border-color: #0d79d1; }
-#search #drinkSearchBy button { background-color: #563cc9; border-color: #563cc9; }
-#search #dietary { background: #000000aa; color: white; font-size: 18px; padding: 15px; border-radius: 10px; }
-#search #dietary label {
+#search #foodSearchBy button { background-color: #2E86AB; border-color: #2E86AB; }
+#search #drinkSearchBy button { background-color: #A23B72; border-color: #A23B72; }
+#search #dietary { background: #000000aa; color: whitesmoke; font-size: 18px; padding: 15px; border-radius: 10px; }
+/* #search #dietary label {
 
-}
+} */
 
 /* Results */
 #results {
@@ -52,7 +69,7 @@ header #subtitle { font-size: 24px; display: inline-block; }
     margin: 0 10px 10px 0;
     padding: 15px;
     border-radius: 10px;
-    background: #ffffffee;
+    background: rgba(245, 245, 245, 0.8);
 }
 
 #results .recipe:hover {
@@ -65,4 +82,3 @@ header #subtitle { font-size: 24px; display: inline-block; }
     }
 }
 
-#nextPageBtn { background-color: #F18F01; border-color: #F18F01; }
