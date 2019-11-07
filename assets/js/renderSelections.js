@@ -9,7 +9,7 @@ $("body").ready(function () {
     for (let i = 0; i < size; i++) {
         $("#foodList").append($("<div>", { "data-index": i }).html(`
         <p>${foodObj[i][0]}</p>
-        <button class="foodRemover remover" data-index=${i}>&times;</button>`)); // adds a "remove" button
+        <button class="foodRemover remover close" data-index=${i}>&times;</button>`)); // adds a "remove" button
     }
 
     //This functions renders all the selected drink items in the DRINKS SECTION
@@ -20,7 +20,7 @@ $("body").ready(function () {
     for (let i = 0; i < length; i++) {
         $("#drinksList").append($("<div>", { "data-index": i }).html(`
         <p>${drinksObj[i][0]}</p>
-        <button class="drinksRemover remover" data-index=${i}>&times;</button>`)); // adds a "remove" button
+        <button class="drinksRemover remover close" data-index=${i}>&times;</button>`)); // adds a "remove" button
     }
 
     $(".foodRemover").click(function () {

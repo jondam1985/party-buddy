@@ -3,58 +3,137 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Livvic', sans-serif;
+    background: url("../img/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-/* container to hold all the content of this page */
+p {
+    font-size: 18px;
+}
+
+/* header */
+#topContainer {
+    text-align: center;
+}
+
+#header {
+    font-size: 5em;
+    font-family: 'Lobster', cursive;
+    color: whitesmoke;
+}
+
+#homeBtn{
+    position: absolute;
+    top:0;
+    left:0;
+    margin: 0.5em;
+}
+
+.glyphicon-home {
+    font-size: 2em;
+    color: #2E86AB;
+}
+
+.topCorner{
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+/* dropdown menu button */
+.btn {
+    margin: 0.5em;
+}
+
+#dropdownMenuButton {
+    background-color: #F18F01;
+    border: none;
+}
+.dropdown-item {
+    background-color: whitesmoke;
+}
+
+/* menu container to hold food and drink lists */
 #menuContainer {
-    width: 90%;
-    height: 90%;
+    margin-left: 20%;
+    margin-right: -20%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 60%;
+    min-height: 65vh;
+    border: 2px solid #2E86AB;
+    border-radius: 8px;
+    background-color: rgba(245, 245, 245, 0.70);
     padding: 1em;
 }
 
-#foodTitle {
-    display: inline-block;
-    padding: 0 auto;
-    width: 45%;
+#menuContainer:after {
+    display: block;
+    content: '';
+    clear: both;
 }
 
-#drinksTitle {
-    display: inline-block;
-    padding: 0 auto;
-    width: 45%;
+.category {
+    font-family: 'Lobster', cursive;
+    color: #A23B72;
 }
 
-#foodList {
-    display: inline-block;
-    width: 40%;
-    padding: 0 auto;
-    border: none;
+#foodDisplay {
+    float: left;
+    width: 50%;
 }
 
-.otherBtn{
-    justify-content: space-between;
+#drinksDisplay {
+    float: right;
+    width: 50%;
+} 
+
+#foodList div,
+#drinksList div {
+    display: flex;
 }
 
-#shopListBtn {
-    background-color: rgb(226, 153, 43);
-    width: 20%;
-    padding-left: 0 auto;
-    border: none;
-    justify-content: space-between;
+
+/* button to remove items from food and drink lists */
+.remover {
+    float: none;
+    color: #F18F01;
+    opacity: 0.9;
+    margin-left: 10px;
+    margin-top: -15px;
 }
 
-#mapBtn {
-    background-color: rgb(226, 153, 43);
-    width: 20%;
-    padding: 0 auto;
-    border: none;
-    justify-content: space-between;
+/* media queries */
+@media only screen and (max-width: 1200px) {
+    #menuContainer {
+        margin-left: 10%;
+        margin-right: -10%;
+        margin-top: 1em;
+        width: 80%;
+    }
 }
 
-#inviteBtn {
-    background-color: rgb(226, 153, 43);
-    width: 20%;
-    padding: 0 auto;
-    border: none;
-    justify-content: space-between;
+@media only screen and (max-width: 640px) {
+    #menuContainer {
+        margin-left: 5%;
+        margin-right: -5%;
+        margin-top: 1em;
+        width: 90%;
+    }
+
+    #header{
+        margin-top: 5vh;
+    }
+
+    #foodDisplay {
+        float: top;
+        width: 100%;
+    }
+    
+    #drinksDisplay {
+        float: bottom;
+        width: 100%;
+    } 
 }
