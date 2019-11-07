@@ -1,49 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Party Buddy</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS and JS with jQuery -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- Main CSS and JS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/core.js"></script>
-</head>
-
-<body>
-    <form id="invitations">
-        <div class="form-group">
-            <label for="emails">Invitation Emails</label>
-            <textarea type="text" id="emails" placeholder="Enter email addresses" required></textarea>
-            <small id="emailHelp" class="form-text text-muted">Enter all the emails separated by semicolons (eg.
-                email1@domain.com;email2@domain.com;email3@domain.com).</small>
+    <head>
+        <meta charset="utf-8">
+        <title>Party Buddy - Invitations</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Livvic&display=swap">
+        <!-- Bootstrap CSS and JS with jQuery -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- Main CSS and JS -->
+        <link rel="stylesheet" href="assets/css/invitestyle.css">
+        <script src="assets/js/core.js"></script>
+    </head>
+    <!-- header -->
+    <div id="topContainer">
+        <h1 id="header" class="display-4">Invitations</h1>
+        <div id="homeBtn">
+            <a href="index.html">
+            <span class="glyphicon glyphicon-home"></span>
+            </a>
         </div>
-        <div class="form-group">
-            <label for="host">Your name (host)</label>
-            <input type="text" id="host" placeholder="eg. Jane Doe" required>
+        <div class="dropdown topCorner">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Planner
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="shopping-list-page.html">Your Menu</a>
+                <a class="dropdown-item" href="shopping-list-page.html">Shopping List</a>
+                <a class="dropdown-item" href="map-page.html">Map</a>
+                <a class="dropdown-item disabled" href="invitations.html">Invite People!</a>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="eventAddress">Event address</label>
-            <input type="text" id="eventAddress" placeholder="eg. 123 Street West, Toronto, ON" required>
+    </div>
+    <body>
+        <!-- Invite info  forms -->
+        <div id="inviteInfo">
+            <form id="invitations">
+                <div class="form-group">
+                    <label for="emails">Recipients</label>
+                    <textarea type="text" class="form-control" id="emails" placeholder="Enter email addresses" required></textarea>
+                    <small id="emailHelp" class="form-text text-muted">Enter all the emails separated by semicolons (eg.
+                    email1@domain.com; email2@domain.com; email3@domain.com).</small>
+                </div>
+                <div class="form-group">
+                    <label for="host">Your name (host)</label>
+                    <input type="text" class="form-control" id="host" placeholder="eg. Jane Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventAddress">Event address</label>
+                    <input type="text" class="form-control" id="eventAddress" placeholder="eg. 123 Street West, Toronto, ON" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Event date and time</label>
+                    <input type="text" class="form-control" id="eventDate" placeholder="eg. Dec 24, 2019 8:00PM" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message (optional)</label>
+                    <textarea type="text" class="form-control" id="message" placeholder="Message..." maxlength="500"></textarea>
+                </div>
+                <div class="form-group">
+                    <button id="submit" type="submit" class="btn btn-primary">Send Invitations</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="eventDate">Event date and time</label>
-            <input type="text" id="eventDate" placeholder="eg. Dec 24, 2019 8:00PM" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message (optional)</label>
-            <textarea type="text" id="message" placeholder="Message..." maxlength="500"></textarea>
-        </div>
-        <div class="form-group">
-            <button id="submit" type="submit" class="btn btn-primary">Send Invitations</button>
-        </div>
-    </form>
-    <script src="./assets/js/invitations.js"></script>
-</body>
+        <script src="./assets/js/invitations.js"></script>
+    </body>
+</html>

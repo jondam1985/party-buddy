@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Livvic', sans-serif;
+    background: url("../img/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* header */
+#topContainer {
+    text-align: center;
+}
+
+#header {
+    font-size: 5em;
+    font-family: 'Lobster', cursive;
+    color: whitesmoke;
+}
+
+/* home page button */
+#homeBtn{
+    position: absolute;
+    top:0;
+    left:0;
+    margin: 0.5em;
+}
+
+.glyphicon-home {
+    font-size: 2em;
+    color: #2E86AB;
+}
+
+/* dropdown menu */
+.topCorner{
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+#dropdownMenuButton {
+    background-color: #F18F01;
+    border: none;
+    margin: 0.5em;
+}
+.dropdown-item {
+    background-color: whitesmoke;
+    margin-right: 50px;
+}
+
+#dropdownMenuButton:hover {
+    color: whitesmoke;
+}
+
+/* invite container to hold the forms */
+#inviteInfo {
+    margin-left: 20%;
+    margin-right: -20%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 60%;
+    min-height: 65vh;
+    border: 2px solid #2E86AB;
+    border-radius: 8px;
+    background-color: rgba(245, 245, 245, 0.70);
+    padding: 1em;
+}
+
+#menuContainer:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+label {
+    font-size: 16px;
+}
+
+#submit {
+    font-size: 16px;
+    background-color: #2E86AB;
+}
+
+/* media queries */
+@media only screen and (max-width: 1200px) {
+    #inviteInfo {
+        margin-left: 10%;
+        margin-right: -10%;
+        margin-top: 1em;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #inviteInfo {
+        margin-left: 5%;
+        margin-right: -5%;
+        margin-top: 1em;
+        width: 90%;
+    }
+
+    #topContainer{
+        margin-top: 5vh;
+    }
+}
