@@ -24,6 +24,7 @@ p {
     color: whitesmoke;
 }
 
+/* home page button */
 #homeBtn{
     position: absolute;
     top:0;
@@ -42,18 +43,16 @@ p {
     right:0;
 }
 
-/* dropdown menu button */
-.btn {
-    margin: 0.5em;
-}
-
 #dropdownMenuButton {
     background-color: #F18F01;
     border: none;
+    margin: 0.5em;
 }
 .dropdown-item {
     background-color: whitesmoke;
+    margin-right: 50px;
 }
+
 
 /* menu container to hold food and drink lists */
 #menuContainer {
