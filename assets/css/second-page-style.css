@@ -89,20 +89,10 @@ p {
     width: 50%;
 } 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> 4763d29da0984b9818f1e4cb21e47ec08c2e9cff
 #foodList div,
 #drinksList div {
     display: flex;
 }
-<<<<<<< HEAD
->>>>>>> origin
-=======
->>>>>>> 4763d29da0984b9818f1e4cb21e47ec08c2e9cff
 
 
 /* button to remove items from food and drink lists */
