@@ -2,8 +2,8 @@
 var getInvitationData = function () {
     let emailTo = $("#emails").val().trim();
     let host = "Invitation from: " + $("#host").val().trim();
-    let address = "Where? : " + $("#eventAddress").val().trim();
-    let dateTime = "When? : " + $("#eventDate").val().trim();
+    let address = "Where: " + $("#eventAddress").val().trim();
+    let dateTime = "When: " + $("#eventDate").val().trim();
     let message = $("#message").val().trim();
 
     let mailto = "mailto:" + emailTo + "?subject=" + encodeMailTo(host) + "&body=" + encodeMailTo(message) + "%0D%0A%0D%0A" + encodeMailTo(address) + "%0D%0A%0D%0A" + encodeMailTo(dateTime);

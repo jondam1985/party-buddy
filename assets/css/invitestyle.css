@@ -9,10 +9,6 @@ body {
     background-attachment: fixed;
 }
 
-p {
-    font-size: 18px;
-}
-
 /* header */
 #topContainer {
     text-align: center;
@@ -37,6 +33,7 @@ p {
     color: #2E86AB;
 }
 
+/* dropdown menu */
 .topCorner{
     position:absolute;
     top:0;
@@ -57,9 +54,8 @@ p {
     color: whitesmoke;
 }
 
-
-/* menu container to hold food and drink lists */
-#menuContainer {
+/* invite container to hold the forms */
+#inviteInfo {
     margin-left: 20%;
     margin-right: -20%;
     margin-top: 2em;
@@ -78,39 +74,18 @@ p {
     clear: both;
 }
 
-.category {
-    font-family: 'Lobster', cursive;
-    color: #A23B72;
+label {
+    font-size: 16px;
 }
 
-#foodDisplay {
-    float: left;
-    width: 50%;
-}
-
-#drinksDisplay {
-    float: right;
-    width: 50%;
-} 
-
-#foodList div,
-#drinksList div {
-    display: flex;
-}
-
-
-/* button to remove items from food and drink lists */
-.remover {
-    float: none;
-    color: #F18F01;
-    opacity: 0.9;
-    margin-left: 10px;
-    margin-top: -15px;
+#submit {
+    font-size: 16px;
+    background-color: #2E86AB;
 }
 
 /* media queries */
 @media only screen and (max-width: 1200px) {
-    #menuContainer {
+    #inviteInfo {
         margin-left: 10%;
         margin-right: -10%;
         margin-top: 1em;
@@ -119,24 +94,14 @@ p {
 }
 
 @media only screen and (max-width: 640px) {
-    #menuContainer {
+    #inviteInfo {
         margin-left: 5%;
         margin-right: -5%;
         margin-top: 1em;
         width: 90%;
     }
 
-    #header{
+    #topContainer{
         margin-top: 5vh;
     }
-
-    #foodDisplay {
-        float: top;
-        width: 100%;
-    }
-    
-    #drinksDisplay {
-        float: bottom;
-        width: 100%;
-    } 
 }
