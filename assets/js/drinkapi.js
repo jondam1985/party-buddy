@@ -14,7 +14,7 @@ var byNameCallAPI = function(){
             renderBNDrinkRes();
         }, 500);
     } else {
-        var drinkInput = $("input").val();
+        var drinkInput = $("#search #keywords").val();
         var byNameQueryURL= "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+drinkInput
         $.ajax({
             url: byNameQueryURL,
