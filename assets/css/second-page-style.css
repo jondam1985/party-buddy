@@ -9,6 +9,10 @@ body {
     background-attachment: fixed;
 }
 
+p {
+    font-size: 18px;
+}
+
 /* header */
 #topContainer {
     text-align: center;
@@ -20,6 +24,7 @@ body {
     color: whitesmoke;
 }
 
+/* home page button */
 #homeBtn{
     position: absolute;
     top:0;
@@ -38,18 +43,16 @@ body {
     right:0;
 }
 
-/* dropdown button */
-.btn {
-    margin: 0.5em;
-}
-
 #dropdownMenuButton {
     background-color: #F18F01;
     border: none;
+    margin: 0.5em;
 }
 .dropdown-item {
     background-color: whitesmoke;
+    margin-right: 50px;
 }
+
 
 /* menu container to hold food and drink lists */
 #menuContainer {
@@ -61,7 +64,7 @@ body {
     min-height: 65vh;
     border: 2px solid #2E86AB;
     border-radius: 8px;
-    background-color: rgba(245, 245, 245, 0.60);
+    background-color: rgba(245, 245, 245, 0.70);
     padding: 1em;
 }
 
@@ -86,10 +89,17 @@ body {
     width: 50%;
 } 
 
+<<<<<<< HEAD
 /* #foodList div,
 #drinksList div {
     display: flex;
 } */
+=======
+#foodList div,
+#drinksList div {
+    display: flex;
+}
+>>>>>>> origin
 
 
 /* button to remove items from food and drink lists */

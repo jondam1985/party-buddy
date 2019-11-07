@@ -82,7 +82,7 @@ var renderBNDrinkRes = function(){
             }
         };
         // cancatinatiing the ingredients and measurments to create a recipe array
-        var recipe = measurements.map(function (str, idx) {
+        let recipe = measurements.map(function (str, idx) {
             return str + " " + ingredientTypes[idx];
         });
         console.log(recipe);
@@ -110,8 +110,8 @@ var renderBNDrinkRes = function(){
                 <ul>
                     ${(function() {
                         let drinkIngredients = "";
-                        for (let i = 0; i < ingredientTypes.length; i++) {
-                        drinkIngredients += `<li>${ingredientTypes[i]}</li>`
+                        for (let i = 0; i < recipe.length; i++) {
+                        drinkIngredients += `<li>${recipe[i]}</li>`
                         }
                         return drinkIngredients;
                     })()}
@@ -126,6 +126,8 @@ var renderBNDrinkRes = function(){
 
 
     };
+
+    // for loop  ends
 
 };
 // function to render the randon drinks response to html
@@ -151,7 +153,7 @@ var renderRDrinkResults = function(){
                 randomMeasurements.push(randomDrinks[key]);
                 }
             };
-        var recipe1 = randomMeasurements.map(function (str, idx) {
+        let recipe1 = randomMeasurements.map(function (str, idx) {
                 return str+ " "+ randomIngredients[idx];});
         let numbIngredients= randomIngredients.length;
 
