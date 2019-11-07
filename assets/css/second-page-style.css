@@ -38,7 +38,7 @@ body {
     right:0;
 }
 
-/* dropdown button */
+/* dropdown menu button */
 .btn {
     margin: 0.5em;
 }
@@ -61,7 +61,7 @@ body {
     min-height: 65vh;
     border: 2px solid #2E86AB;
     border-radius: 8px;
-    background-color: rgba(245, 245, 245, 0.60);
+    background-color: rgba(245, 245, 245, 0.70);
     padding: 1em;
 }
 
@@ -86,12 +86,19 @@ body {
     width: 50%;
 } 
 
+#foodList div,
+#drinksList div {
+    display: flex;
+}
+
 
 /* button to remove items from food and drink lists */
 .remover {
     float: none;
     color: #F18F01;
     opacity: 0.9;
+    margin-left: 10px;
+    margin-top: -15px;
 }
 
 /* media queries */
