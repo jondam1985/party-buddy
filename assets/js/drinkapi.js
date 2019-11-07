@@ -63,81 +63,26 @@ var renderBNDrinkRes = function(){
     results.empty(); // clears all pervious results
 
     for (var i=0; i<6; i++){
-<<<<<<< HEAD
-        let drink=drinkResponse.drinks[i]
-        let drinkImage = drink.strDrinkThumb;
-        let drinkTitle= drink.strDrink;
-        let drinkInstruc=drink.strInstructions;
-        // creating a new array that holds only ingredient keys without null values
-        var bevIngredients = [];
-        for (var key in drink) {
-            if (drink.hasOwnProperty(key) && key.match(/strIngredient/gi) && drink[key] != null) {
-            bevIngredients.push(drinkResponse.drinks[i][key]);
-            }
-        };
-        // creaitng a new array that holds on the measurement keys without null values
-        var measurements =[];
-=======
         let drink = drinkResponse.drinks[i];
 
         let dResponseImage = drink.strDrinkThumb;
         let dResponseTitle= drink.strDrink;
         // creating a new array that holds only ingredient keys without null values
-        var ingredientTypes = [];
+        let ingredientTypes = [];
         for (var key in drink) {
             if (drink.hasOwnProperty(key) && key.match(/strIngredient/gi) && drink[key] != null) {
             ingredientTypes.push(drink[key]);
             }
         };
         // creaitng a new array that holds on the measurement keys without null values
-        var measurements = [];
->>>>>>> fc2b15c53ff827adba735641085c106ffad9aa04
+        let measurements = [];
         for (var key in drink) {
             if (drink.hasOwnProperty(key) && key.match(/strMeasure/gi) && drink[key] != null) {
             measurements.push(drink[key]);
             }
         };
         // cancatinatiing the ingredients and measurments to create a recipe array
-        var recipe = measurements.map(function (str, idx) {
-<<<<<<< HEAD
-            return str+ " "+ bevIngredients[idx];});
-            console.log(recipe);
-
-        $(results).append($("<div>", {
-            class: "byNameDrink",
-            "data-index": i,
-            "data-toggle":"modal",
-            "data-target": "#modal"
-        }).html(`<p><img src="${drinkImage}"alt=""></p>
-        <h5>${drinkTitle}</h5>
-        <p>
-            Servings: 1 <br>
-            Ingredients: ${bevIngredients.length}<br>
-        </p>
-`   ).on("click",function(){
-        $("#modal .modal-title ").html(`${drinkTitle}`);
-        $("#modal .modal-body").html(`
-            <p><img src="${drinkImage}" alt=""></p>
-            <p style="margin-bottom: 0;"><b>Ingredients:</b></p>
-            <ul>
-                ${(function() {
-                    let drinkingredients = "";
-                    for (let i = 0; i < recipe.length; i++) {
-                    drinkingredients += `<li>${recipe[i]}</li>`
-                    }
-                    return drinkingredients;
-                     })()}
-            </ul>
-            <p> 
-                <b>Instructions:</b> 
-                <br>
-                 ${drinkInstruc}
-            <p>
-    `);
-     }));
-
-        
-=======
+        let recipe = measurements.map(function (str, idx) {
             return str + " " + ingredientTypes[idx];
         });
         console.log(recipe);
@@ -165,8 +110,8 @@ var renderBNDrinkRes = function(){
                 <ul>
                     ${(function() {
                         let drinkIngredients = "";
-                        for (let i = 0; i < ingredientTypes.length; i++) {
-                        drinkIngredients += `<li>${ingredientTypes[i]}</li>`
+                        for (let i = 0; i < recipe.length; i++) {
+                        drinkIngredients += `<li>${recipe[i]}</li>`
                         }
                         return drinkIngredients;
                     })()}
@@ -180,7 +125,6 @@ var renderBNDrinkRes = function(){
 
 
 
->>>>>>> fc2b15c53ff827adba735641085c106ffad9aa04
     };
 
     // for loop  ends
@@ -209,7 +153,7 @@ var renderRDrinkResults = function(){
                 randomMeasurements.push(randomDrinks[key]);
                 }
             };
-        var recipe1 = randomMeasurements.map(function (str, idx) {
+        let recipe1 = randomMeasurements.map(function (str, idx) {
                 return str+ " "+ randomIngredients[idx];});
         let numbIngredients= randomIngredients.length;
 
