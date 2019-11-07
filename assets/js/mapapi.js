@@ -56,7 +56,7 @@ $("#mapLiquor").click(function () {
     }
 })
 
-$("#searchPlaces").click(function (e) {
+$("#searchBtn").click(function (e) {
 
     e.preventDefault();
     
