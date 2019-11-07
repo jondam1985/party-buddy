@@ -179,6 +179,10 @@ iframe {
 }
 
 @media only screen and (max-width: 640px) {
+    #topContainer{
+        margin-top: 5vh;
+    }
+    
     #main {
         margin-left: 5%;
         margin-right: -5%;
