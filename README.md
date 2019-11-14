@@ -95,6 +95,6 @@ as an assignment for the [U of T Coding Bootcamp](https://bootcamp.learn.utoront
 
 ## License
 
-This project is licensed under the MIT license. See [license.txt](license.txt) file for details.
+This project is licensed under the MIT license. See [license file](https://github.com/jondam1985/party-buddy/blob/master/LICENSE) for details.
 
  
